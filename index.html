@@ -12,6 +12,7 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Jane & Joe - Wedding Celebration">
     <meta property="og:description" content="July 12, 2026 | Montego Bay, Jamaica">
+    <meta property="og:image" content="assets/images/welcome-background.jpg">
     <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
@@ -534,6 +535,22 @@
             .hero-names {
                 letter-spacing: 4px;
             }
+
+            /* Add subtle overlay to hero background in mobile for better text readability */
+            .hero-background {
+                opacity: 0.25;
+            }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.5) 100%);
+                z-index: 1;
+            }
         }
     </style>
 </head>
@@ -544,7 +561,6 @@
         <div class="hero-content">
             <div class="hero-script" data-aos="fade-up">Together Forever</div>
             <div class="hero-names" data-aos="fade-up" data-aos-delay="200">Jane & Joe</div>
-            <span class="hero-ampersand" data-aos="zoom-in" data-aos-delay="400">&</span>
             <div class="hero-date" data-aos="fade-up" data-aos-delay="600">July 12, 2026</div>
             <div class="hero-location" data-aos="fade-up" data-aos-delay="800">Montego Bay, Jamaica</div>
         </div>
