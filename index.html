@@ -552,11 +552,284 @@
                 z-index: 1;
             }
         }
+        /* ==================== STICKY NAVIGATION ==================== */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--olive-dark);
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            z-index: 10000;
+            border-radius: 0 0 8px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid var(--olive-medium);
+        }
+
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(253, 252, 247, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(107, 116, 85, 0.15);
+            box-shadow: 0 4px 20px rgba(58, 58, 58, 0.08);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .main-nav.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: var(--font-script);
+            font-size: 1.5rem;
+            color: var(--olive-dark);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(168, 181, 153, 0.1);
+            color: var(--olive-dark);
+        }
+
+        .nav-links a.active {
+            background: rgba(107, 116, 85, 0.1);
+            color: var(--olive-dark);
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .mobile-menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        .mobile-menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--olive-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(253, 252, 247, 0.98) 0%, rgba(245, 242, 232, 0.98) 100%);
+            backdrop-filter: blur(15px);
+            box-shadow: -4px 0 30px rgba(58, 58, 58, 0.15);
+            z-index: 1000;
+            padding: 96px 24px 24px;
+            transition: right 0.3s ease;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .mobile-nav-links a {
+            font-family: var(--font-sans);
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            display: block;
+        }
+
+        .mobile-nav-links a:hover {
+            background: rgba(168, 181, 153, 0.15);
+            color: var(--olive-dark);
+        }
+
+        /* ==================== BACK TO TOP BUTTON ==================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 998;
+            background: var(--olive-dark);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(107, 116, 85, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--olive-medium);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(107, 116, 85, 0.4);
+        }
+
+        /* ==================== STICKY MOBILE RSVP ==================== */
+        .sticky-rsvp {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 997;
+            padding: 8px 24px;
+            background: linear-gradient(135deg, var(--olive-dark), var(--olive-medium));
+            box-shadow: 0 -4px 20px rgba(107, 116, 85, 0.3);
+            display: none;
+        }
+
+        .sticky-rsvp.visible {
+            display: block;
+        }
+
+        .sticky-rsvp a {
+            display: block;
+            text-align: center;
+            color: white;
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .sticky-rsvp {
+                display: none !important;
+            }
+        }
+
+        /* Update hero to account for nav */
+        .hero {
+            margin-top: 60px;
+        }
     </style>
 </head>
 <body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Sticky Navigation -->
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">Jane & Joe</a>
+            <ul class="nav-links">
+                <li><a href="#welcome" data-nav-link>Welcome</a></li>
+                <li><a href="#countdown" data-nav-link>Countdown</a></li>
+                <li><a href="#timeline" data-nav-link>Timeline</a></li>
+                <li><a href="#gallery" data-nav-link>Gallery</a></li>
+                <li><a href="#rsvp" data-nav-link>RSVP</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+        <ul class="mobile-nav-links">
+            <li><a href="#home" data-mobile-nav-link>Home</a></li>
+            <li><a href="#welcome" data-mobile-nav-link>Welcome</a></li>
+            <li><a href="#countdown" data-mobile-nav-link>Countdown</a></li>
+            <li><a href="#timeline" data-mobile-nav-link>Timeline</a></li>
+            <li><a href="#gallery" data-mobile-nav-link>Gallery</a></li>
+            <li><a href="#rsvp" data-mobile-nav-link>RSVP</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <img src="assets/images/hero-bg.jpg" alt="Jane and Joe" class="hero-background">
         <div class="hero-content">
             <div class="hero-script" data-aos="fade-up">Together Forever</div>
@@ -570,7 +843,7 @@
     </section>
 
     <!-- Welcome Section (Split Layout) -->
-    <section class="split-section">
+    <section class="split-section" id="welcome">
         <div class="split-content" data-aos="fade-right">
             <span class="section-label">Our Celebration</span>
             <h2 class="section-title">Join Us</h2>
@@ -594,7 +867,7 @@
     </section>
 
     <!-- Countdown Section -->
-    <section class="countdown-section">
+    <section class="countdown-section" id="countdown">
         <div class="countdown-container">
             <span class="section-label" data-aos="fade-up">Until We Say I Do</span>
             <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Countdown</h2>
@@ -624,7 +897,7 @@
     </section>
 
     <!-- Timeline Section -->
-    <section class="timeline-section">
+    <section class="timeline-section" id="timeline">
         <div class="timeline-container">
             <div style="text-align: center; margin-bottom: 60px;">
                 <span class="section-label" data-aos="fade-up">Schedule</span>
@@ -673,7 +946,7 @@
     </section>
 
     <!-- Resort Gallery -->
-    <section class="gallery-section">
+    <section class="gallery-section" id="gallery">
         <div class="gallery-container">
             <span class="section-label" data-aos="fade-up">The Venue</span>
             <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Sandals Royal Caribbean</h2>
@@ -822,7 +1095,7 @@
     </section>
 
     <!-- RSVP Section -->
-    <section class="rsvp-section">
+    <section class="rsvp-section" id="rsvp">
         <div class="rsvp-container">
             <span class="section-label" data-aos="fade-up">Please Respond</span>
             <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">RSVP</h2>
@@ -975,6 +1248,127 @@
             link.click();
             document.body.removeChild(link);
         });
+
+        // ===================================
+        // NAVIGATION SYSTEM
+        // ===================================
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const mobileNavLinks = document.querySelectorAll('[data-mobile-nav-link]');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                const isExpanded = mobileNav.classList.contains('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+            });
+
+            // Close mobile menu when clicking a link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Hide nav on scroll down, show on scroll up
+        let lastScroll = 0;
+        const mainNav = document.querySelector('.main-nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                mainNav.classList.add('hidden');
+            } else {
+                mainNav.classList.remove('hidden');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Active section highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('[data-nav-link]');
+
+        function updateActiveNav() {
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+
+        // ===================================
+        // BACK TO TOP BUTTON
+        // ===================================
+        const backToTop = document.getElementById('backToTop');
+
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // ===================================
+        // STICKY MOBILE RSVP
+        // ===================================
+        const stickyRsvp = document.getElementById('stickyRsvp');
+        const rsvpSection = document.getElementById('rsvp');
+
+        if (stickyRsvp && rsvpSection) {
+            window.addEventListener('scroll', () => {
+                if (window.innerWidth <= 767) {
+                    const rsvpRect = rsvpSection.getBoundingClientRect();
+                    if (rsvpRect.top > window.innerHeight) {
+                        stickyRsvp.classList.add('visible');
+                    } else {
+                        stickyRsvp.classList.remove('visible');
+                    }
+                }
+            });
+        }
     </script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- Sticky Mobile RSVP -->
+    <div class="sticky-rsvp" id="stickyRsvp">
+        <a href="#rsvp">RSVP Now</a>
+    </div>
+
+    </main>
 </body>
 </html>
