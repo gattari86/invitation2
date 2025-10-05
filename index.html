@@ -30,15 +30,16 @@
     <style>
         /* ==================== CSS VARIABLES ==================== */
         :root {
-            /* Color Palette 2 - Muted Olive & Cream */
-            --olive-dark: #6B7455;
-            --olive-medium: #8A9578;
-            --olive-light: #A8B599;
-            --sage-green: #C5D4B8;
-            --cream: #F5F2E8;
-            --warm-white: #FDFCF7;
-            --charcoal: #3A3A3A;
-            --soft-gray: #757575;
+            /* Color Palette - Elegant Cyan & Pearl White */
+            --cyan-dark: #0E7490;
+            --cyan-medium: #06B6D4;
+            --cyan-light: #67E8F9;
+            --cyan-pale: #CFFAFE;
+            --pearl-white: #FDFBF7;
+            --off-white: #F8FAFC;
+            --ivory: #FFFEF9;
+            --charcoal: #1E293B;
+            --soft-gray: #64748B;
 
             /* Typography */
             --font-serif: 'Cormorant', serif;
@@ -66,7 +67,7 @@
             font-family: var(--font-sans);
             color: var(--charcoal);
             line-height: 1.6;
-            background: var(--warm-white);
+            background: var(--off-white);
             overflow-x: hidden;
         }
 
@@ -97,7 +98,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);
+            background: linear-gradient(135deg, var(--pearl-white) 0%, var(--off-white) 100%);
         }
 
         .hero-background {
@@ -131,7 +132,7 @@
         .hero-ampersand {
             font-family: var(--font-script);
             font-size: clamp(3rem, 10vw, 6rem);
-            color: var(--olive-medium);
+            color: var(--cyan-medium);
             display: block;
             margin: 20px 0;
         }
@@ -211,7 +212,7 @@
             font-size: 0.75rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--olive-medium);
+            color: var(--cyan-medium);
             margin-bottom: 20px;
             font-weight: 700;
         }
@@ -235,7 +236,7 @@
 
         /* ==================== COUNTDOWN SECTION ==================== */
         .countdown-section {
-            background: var(--cream);
+            background: var(--pearl-white);
             padding: var(--section-padding);
             text-align: center;
         }
@@ -270,7 +271,7 @@
             font-family: var(--font-serif);
             font-size: clamp(3rem, 6vw, 5rem);
             font-weight: 300;
-            color: var(--olive-dark);
+            color: var(--cyan-dark);
             line-height: 1;
         }
 
@@ -286,7 +287,7 @@
         /* ==================== TIMELINE SECTION ==================== */
         .timeline-section {
             padding: var(--section-padding);
-            background: var(--warm-white);
+            background: var(--off-white);
         }
 
         .timeline-container {
@@ -308,7 +309,7 @@
             top: 80px;
             height: calc(100% - 80px);
             width: 1px;
-            background: var(--sage-green);
+            background: var(--cyan-pale);
         }
 
         .timeline-time {
@@ -322,7 +323,7 @@
             font-family: var(--font-serif);
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--olive-dark);
+            color: var(--cyan-dark);
         }
 
         .timeline-time-period {
@@ -336,10 +337,10 @@
             flex-shrink: 0;
             width: 16px;
             height: 16px;
-            background: var(--olive-medium);
+            background: var(--cyan-medium);
             border-radius: 50%;
-            border: 3px solid var(--cream);
-            box-shadow: 0 0 0 1px var(--olive-medium);
+            border: 3px solid var(--pearl-white);
+            box-shadow: 0 0 0 1px var(--cyan-medium);
             margin-top: 8px;
         }
 
@@ -361,7 +362,7 @@
         /* ==================== GALLERY SECTION ==================== */
         .gallery-section {
             padding: var(--section-padding);
-            background: var(--cream);
+            background: var(--pearl-white);
         }
 
         .gallery-container {
@@ -406,7 +407,7 @@
         /* ==================== RSVP SECTION ==================== */
         .rsvp-section {
             padding: var(--section-padding);
-            background: var(--warm-white);
+            background: var(--off-white);
             text-align: center;
         }
 
@@ -420,7 +421,7 @@
             align-items: center;
             gap: 12px;
             padding: 18px 50px;
-            background: var(--olive-dark);
+            background: var(--cyan-dark);
             color: white;
             font-family: var(--font-sans);
             font-size: 0.9rem;
@@ -432,7 +433,7 @@
         }
 
         .rsvp-button:hover {
-            background: var(--olive-medium);
+            background: var(--cyan-medium);
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(107, 116, 85, 0.3);
         }
@@ -443,20 +444,20 @@
             gap: 12px;
             padding: 16px 40px;
             background: transparent;
-            color: var(--olive-dark);
+            color: var(--cyan-dark);
             font-family: var(--font-sans);
             font-size: 0.85rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            border: 1px solid var(--olive-medium);
+            border: 1px solid var(--cyan-medium);
             border-radius: 2px;
             margin-top: 20px;
             transition: all 0.3s ease;
         }
 
         .calendar-button:hover {
-            background: var(--cream);
-            border-color: var(--olive-dark);
+            background: var(--pearl-white);
+            border-color: var(--cyan-dark);
         }
 
         /* ==================== FOOTER ==================== */
@@ -470,7 +471,7 @@
         .footer-hashtag {
             font-family: var(--font-script);
             font-size: 2.5rem;
-            color: var(--sage-green);
+            color: var(--cyan-pale);
             margin-bottom: 20px;
         }
 
@@ -610,7 +611,7 @@
             position: absolute;
             top: -100px;
             left: 0;
-            background: var(--olive-dark);
+            background: var(--cyan-dark);
             color: white;
             padding: 12px 16px;
             text-decoration: none;
@@ -620,7 +621,7 @@
 
         .skip-link:focus {
             top: 0;
-            outline: 3px solid var(--olive-medium);
+            outline: 3px solid var(--cyan-medium);
         }
 
         .main-nav {
@@ -653,7 +654,7 @@
         .nav-brand {
             font-family: var(--font-script);
             font-size: 1.5rem;
-            color: var(--olive-dark);
+            color: var(--cyan-dark);
             text-decoration: none;
         }
 
@@ -677,12 +678,12 @@
 
         .nav-links a:hover {
             background: rgba(168, 181, 153, 0.1);
-            color: var(--olive-dark);
+            color: var(--cyan-dark);
         }
 
         .nav-links a.active {
             background: rgba(107, 116, 85, 0.1);
-            color: var(--olive-dark);
+            color: var(--cyan-dark);
         }
 
         @media (min-width: 768px) {
@@ -711,7 +712,7 @@
         .mobile-menu-toggle span {
             width: 28px;
             height: 3px;
-            background: var(--olive-dark);
+            background: var(--cyan-dark);
             border-radius: 2px;
             transition: all 0.3s ease;
         }
@@ -768,7 +769,7 @@
 
         .mobile-nav-links a:hover {
             background: rgba(168, 181, 153, 0.15);
-            color: var(--olive-dark);
+            color: var(--cyan-dark);
         }
 
         /* ==================== BACK TO TOP BUTTON ==================== */
@@ -777,7 +778,7 @@
             bottom: 20px;
             right: 20px;
             z-index: 998;
-            background: var(--olive-dark);
+            background: var(--cyan-dark);
             color: white;
             border: none;
             border-radius: 50%;
@@ -800,7 +801,7 @@
         }
 
         .back-to-top:hover {
-            background: var(--olive-medium);
+            background: var(--cyan-medium);
             transform: translateY(-3px);
             box-shadow: 0 6px 25px rgba(107, 116, 85, 0.4);
         }
@@ -813,7 +814,7 @@
             right: 0;
             z-index: 997;
             padding: 8px 24px;
-            background: linear-gradient(135deg, var(--olive-dark), var(--olive-medium));
+            background: linear-gradient(135deg, var(--cyan-dark), var(--cyan-medium));
             box-shadow: 0 -4px 20px rgba(107, 116, 85, 0.3);
             display: none;
         }
@@ -891,7 +892,7 @@
             <div class="hero-location" data-aos="fade-up" data-aos-delay="800">Montego Bay, Jamaica</div>
         </div>
         <div class="scroll-indicator">
-            <i data-lucide="chevron-down" style="color: var(--olive-medium); width: 32px; height: 32px;"></i>
+            <i data-lucide="chevron-down" style="color: var(--cyan-medium); width: 32px; height: 32px;"></i>
         </div>
     </section>
 
@@ -1079,7 +1080,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="rsvp-section" style="background: var(--cream);">
+    <section class="rsvp-section" style="background: var(--pearl-white);">
         <div class="rsvp-container" style="max-width: 800px;">
             <span class="section-label" data-aos="fade-up">Common Questions</span>
             <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">FAQ</h2>
@@ -1089,7 +1090,7 @@
                     <div class="faq-question">
                         <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--charcoal); margin-bottom: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                             When should we arrive in Jamaica?
-                            <i data-lucide="chevron-down" style="width: 20px; height: 20px; color: var(--olive-medium); transition: transform 0.3s ease;"></i>
+                            <i data-lucide="chevron-down" style="width: 20px; height: 20px; color: var(--cyan-medium); transition: transform 0.3s ease;"></i>
                         </h3>
                     </div>
                     <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease;">
@@ -1104,7 +1105,7 @@
                     <div class="faq-question">
                         <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--charcoal); margin-bottom: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                             What's the weather like in July?
-                            <i data-lucide="chevron-down" style="width: 20px; height: 20px; color: var(--olive-medium); transition: transform 0.3s ease;"></i>
+                            <i data-lucide="chevron-down" style="width: 20px; height: 20px; color: var(--cyan-medium); transition: transform 0.3s ease;"></i>
                         </h3>
                     </div>
                     <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease;">
@@ -1119,7 +1120,7 @@
                     <div class="faq-question">
                         <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--charcoal); margin-bottom: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                             Is the resort adults-only?
-                            <i data-lucide="chevron-down" style="width: 20px; height: 20px; color: var(--olive-medium); transition: transform 0.3s ease;"></i>
+                            <i data-lucide="chevron-down" style="width: 20px; height: 20px; color: var(--cyan-medium); transition: transform 0.3s ease;"></i>
                         </h3>
                     </div>
                     <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease;">
@@ -1133,7 +1134,7 @@
                     <div class="faq-question">
                         <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--charcoal); margin-bottom: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                             How do I book my stay?
-                            <i data-lucide="chevron-down" style="width: 20px; height: 20px; color: var(--olive-medium); transition: transform 0.3s ease;"></i>
+                            <i data-lucide="chevron-down" style="width: 20px; height: 20px; color: var(--cyan-medium); transition: transform 0.3s ease;"></i>
                         </h3>
                     </div>
                     <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease;">
@@ -1174,7 +1175,7 @@
 
     <!-- Music Player -->
     <div class="music-player" id="musicPlayer">
-        <i data-lucide="music" style="width: 24px; height: 24px; color: var(--olive-dark);"></i>
+        <i data-lucide="music" style="width: 24px; height: 24px; color: var(--cyan-dark);"></i>
     </div>
     <audio id="backgroundMusic" loop>
         <source src="assets/audio/background-music.mp3" type="audio/mpeg">
@@ -1226,7 +1227,7 @@
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 
             if (distance < 0) {
-                document.getElementById('countdown').innerHTML = '<p style="font-size: 2rem; color: var(--olive-dark);">We\'re Married!</p>';
+                document.getElementById('countdown').innerHTML = '<p style="font-size: 2rem; color: var(--cyan-dark);">We\'re Married!</p>';
             }
         }
 
